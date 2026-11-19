@@ -1,0 +1,76 @@
+/* Votepaddie design tokens. Brand: galaxy black #060507, seal grey #CBCFD2, burst orange #F74B01 (highlights only). */
+:root {
+  --galaxy: #060507;
+  --seal: #CBCFD2;
+  --burst: #F74B01;
+  --burst-ink: #060507;               /* text ON orange is always black: white on #F74B01 fails contrast */
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-press: 120ms;
+  --dur-fast: 180ms;
+  --dur-base: 240ms;
+  --dur-sheet: 320ms;
+  --dur-burst: 480ms;
+
+  --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --col: 560px;
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #060507;
+  --bg-raised: #0d0c0e;
+  --surface: rgba(203, 207, 210, 0.065);
+  --surface-2: rgba(203, 207, 210, 0.11);
+  --surface-3: rgba(203, 207, 210, 0.16);
+  --border: rgba(203, 207, 210, 0.12);
+  --border-strong: rgba(203, 207, 210, 0.24);
+  --text: #eceef0;
+  --text-2: #CBCFD2;
+  --text-3: rgba(203, 207, 210, 0.62);
+  --glass: rgba(18, 17, 20, 0.72);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+  --burst-soft: rgba(247, 75, 1, 0.14);
+  --burst-line: rgba(247, 75, 1, 0.42);
+  --ok: #7fd6a4;
+  --bad: #ff9b85;
+  --skeleton-base: rgba(203, 207, 210, 0.07);
+  --skeleton-shine: rgba(203, 207, 210, 0.16);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f4f5;
+  --bg-raised: #ffffff;
+  --surface: #ffffff;
+  --surface-2: rgba(6, 5, 7, 0.06);
+  --surface-3: rgba(6, 5, 7, 0.10);
+  --border: rgba(6, 5, 7, 0.10);
+  --border-strong: rgba(6, 5, 7, 0.22);
+  --text: #060507;
+  --text-2: rgba(6, 5, 7, 0.78);
+  --text-3: rgba(6, 5, 7, 0.58);
+  --glass: rgba(255, 255, 255, 0.78);
+  --shadow: 0 10px 40px rgba(6, 5, 7, 0.12);
+  --burst-soft: rgba(247, 75, 1, 0.10);
+  --burst-line: rgba(247, 75, 1, 0.5);
+  --ok: #17794a;
+  --bad: #b3300f;
+  --skeleton-base: rgba(6, 5, 7, 0.06);
+  --skeleton-shine: rgba(6, 5, 7, 0.12);
+}
+
+[data-contrast="high"] {
+  --border: var(--border-strong);
+  --text-3: var(--text-2);
+  --surface: var(--surface-2);
+}
+[data-contrast="high"][data-theme="dark"] { --border-strong: rgba(236, 238, 240, 0.55); --border: rgba(236, 238, 240, 0.4); }
+[data-contrast="high"][data-theme="light"] { --border-strong: rgba(6, 5, 7, 0.7); --border: rgba(6, 5, 7, 0.55); }
