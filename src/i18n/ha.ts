@@ -27,6 +27,7 @@ export const ha: Partial<Record<MessageKey, string>> = {
   "unit.youVoted": "Ka riga ka yi zaɓe", "unit.votedBody": "An ƙidaya ƙuri'arka. Mun gode da ka kaɗa ƙuri'a! Don kare ƙididdiga, ba za ka iya sake shiga layi ba.", "unit.alreadyVoted": "Ka riga ka yi zaɓe, ba za ka iya sake shiga layi ba.",
   "unit.unofficial": "Ba na hukuma ba. INEC ba ta tafiyar da wannan layin ba. Kada ka bar ainihin layi sai jami'ai sun ce maka.",
   "scan.title": "Duba takardar sakamako", "scan.capture": "Ɗauki hoton takardar",
+  "scan.viewProof": "Duba hoton shaidar", "scan.proofTitle": "Shaidar takardar sakamako", "scan.photoLoading": "Ana loda hoton shaidar…", "scan.photoUnavailable": "Babu hoton shaidar",
   "scan.limits": "Alamar hoto tana tabbatar da cewa wannan hoton ya wanzu a wannan lokacin. Ba ta tabbatar da cewa takardar ta gaskiya ce ba.",
   "help.title": "Allon taimako", "help.need": "Ina buƙatar taimako", "help.offer": "Zan iya taimakawa",
   "help.safety": "Kada ka aika kuɗi ko ka bayar da lambar wayarka ko adireshin gidanka. Ku haɗu a rumfar zaɓe kawai.",

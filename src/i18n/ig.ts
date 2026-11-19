@@ -27,6 +27,7 @@ export const ig: Partial<Record<MessageKey, string>> = {
   "unit.youVoted": "I tụnyela vootu", "unit.votedBody": "A gụọla vootu gị. Daalụ maka ịtụ vootu! Iji chekwaa ọnụ ọgụgụ ahụ, ị gaghị enwe ike ịlaghachi na ahịrị.", "unit.alreadyVoted": "I meela ntuli aka na mbụ, ị gaghị enwe ike ịlaghachi na ahịrị.",
   "unit.unofficial": "Ọ bụghị nke gọọmentị. INEC anaghị achị ahịrị a. Ahapụla ahịrị n'ezie ọ gwụla ma ndị ọrụ agwa gị.",
   "scan.title": "Nyochaa akwụkwọ nsonaazụ", "scan.capture": "See foto akwụkwọ ahụ",
+  "scan.viewProof": "Lee foto ihe akaebe", "scan.proofTitle": "Ihe akaebe akwụkwọ nsonaazụ", "scan.photoLoading": "Na-ebudata foto ihe akaebe…", "scan.photoUnavailable": "Foto ihe akaebe adịghị",
   "scan.limits": "Mkpisi mkpụrụ ndụ foto na-egosi na foto a dị n'oge a. Ọ naghị egosi na akwụkwọ ahụ bụ eziokwu.",
   "help.title": "Bọọdụ enyemaka", "help.need": "Achọrọ m enyemaka", "help.offer": "Enwere m ike inye aka",
   "help.safety": "Ezila ego ma ọ bụ nọmba ekwentị gị ma ọ bụ adreesị ụlọ gị. Zute naanị n'ebe ntuli aka.",

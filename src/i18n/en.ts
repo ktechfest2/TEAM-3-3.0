@@ -77,6 +77,7 @@ export const en = {
   "scan.limits": "The fingerprint proves this exact photo existed at this time. It does not prove the sheet is genuine.",
   "scan.tab.scan": "Scan", "scan.tab.ledger": "Ledger", "scan.tab.verify": "Verify",
   "scan.myScans": "My scans", "scan.noScans": "You haven't sealed any sheets yet.", "scan.chain": "Chain hash", "scan.serverTime": "Server time", "scan.deviceTime": "Phone time",
+  "scan.viewProof": "View photo proof", "scan.proofTitle": "Result sheet proof", "scan.photoLoading": "Loading photo proof…", "scan.photoUnavailable": "Photo proof not available",
   "scan.verifyIntro": "Got a result-sheet photo from WhatsApp? Check whether that exact file is in the ledger.",
   "scan.verifyPick": "Choose a photo", "scan.verifyFound": "This exact file is in the ledger", "scan.verifyNone": "No exact match. A re-saved or screenshotted copy will not match - that doesn't mean it's fake.",
   "scan.consensus": "What others read", "scan.agree": "{n} matching", "scan.attachLocation": "Attach my location to this scan",

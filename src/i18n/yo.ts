@@ -27,6 +27,7 @@ export const yo: Partial<Record<MessageKey, string>> = {
   "unit.youVoted": "O ti dìbò", "unit.votedBody": "A ti ka ìbò rẹ. Ẹ ṣeun fún dídìbò! Láti dáàbò bo iye àwọn ènìyàn, o kò lè tún darapọ̀ mọ́ ìlà mọ́.", "unit.alreadyVoted": "O ti dìbò tẹ́lẹ̀, o kò lè tún darapọ̀ mọ́ ìlà mọ́.",
   "unit.unofficial": "Kì í ṣe ti ìjọba. INEC kọ́ ló ń darí ìlà yìí. Má ṣe kúrò nínú ìlà gidi àfi bí àwọn òṣìṣẹ́ bá sọ fún ọ.",
   "scan.title": "Ṣàyẹ̀wò ìwé àbájáde", "scan.capture": "Yà fọ́tò ìwé náà",
+  "scan.viewProof": "Wo fọ́tò ẹ̀rí", "scan.proofTitle": "Ẹ̀rí ìwé àbájáde", "scan.photoLoading": "Ń gbé fọ́tò ẹ̀rí wá…", "scan.photoUnavailable": "Fọ́tò ẹ̀rí kò sí",
   "scan.limits": "Àmì fọ́tò jẹ́rìí pé fọ́tò yìí wà ní àkókò yìí. Kò jẹ́rìí pé ìwé náà jẹ́ òótọ́.",
   "help.title": "Pátákó ìrànlọ́wọ́", "help.need": "Mo nílò ìrànlọ́wọ́", "help.offer": "Mo lè ran ni lọ́wọ́",
   "help.safety": "Má fi owó ránṣẹ́ tàbí fún ni ní nọ́ńbà fóònù tàbí àdírẹ́sì ilé rẹ. Pàdé ní ibùdó ìdìbò nìkan.",

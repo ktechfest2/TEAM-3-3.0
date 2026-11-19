@@ -25,6 +25,7 @@ export const pcm: Partial<Record<MessageKey, string>> = {
   "unit.youVoted": "You don vote", "unit.votedBody": "We don count your vote. Thank you as you vote! To protect the headcount, you no fit join line again.", "unit.alreadyVoted": "You don already vote, you no fit join the line again.",
   "unit.unofficial": "No be official. INEC no dey run this line. No comot from the real queue unless officials tell you.",
   "scan.title": "Scan result sheet", "scan.capture": "Snap the sheet",
+  "scan.viewProof": "View photo proof", "scan.proofTitle": "Result sheet proof", "scan.photoLoading": "Dey load photo proof…", "scan.photoUnavailable": "Photo proof no dey",
   "scan.limits": "The photo fingerprint show say this exact photo dey for this time. E no prove say the sheet na correct one.",
   "help.title": "Help board", "help.need": "I need help", "help.offer": "I fit help",
   "help.safety": "No send money, and no share your phone number or house address. Meet only for the polling unit.",

@@ -12,6 +12,7 @@ import type { PollingUnit } from "@/api/service/polling-units/types";
 import { useMyUnit } from "@/hooks/useMyUnit";
 import { useT } from "@/hooks/useT";
 import { shortHash, stagger } from "@/lib/utils";
+import { MyScanCard } from "./MyScanCard";
 import { ScoreSummary } from "./ScoreSummary";
 
 export function LedgerView() {
@@ -82,13 +83,11 @@ export function LedgerView() {
           <h3 className="title-2">{t("scan.myScans")}</h3>
           {mySheets.isLoading ? <CardSkeleton lines={2} /> :
             (mySheets.data?.length ?? 0) === 0 ? <StateCard icon="camera" title={t("scan.noScans")} /> :
-            mySheets.data!.map((s) => (
-              <div key={s.id} className="card stack stack-2">
-                <div className="caption">{new Date(s.created_at).toLocaleString()} · {s.pu_code}</div>
-                <ScoreSummary scores={s.scores} />
-                <span className="mono">{shortHash(s.sha256, 14)}</span>
-              </div>
-            ))}
+            <div className="stack stack-3 stagger">
+              {mySheets.data!.map((s) => (
+                <MyScanCard key={s.id} sheet={s} />
+              ))}
+            </div>}
         </section>
       )}
 
