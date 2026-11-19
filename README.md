@@ -6,7 +6,11 @@ Hackathon prototype for *"Every Vote, Every Voice"* (theme: *Building trust in g
 Weak link we chose: **voter readiness + result trust and accessibility for elderly/disabled voters** - from "my polling unit moved / how long is the line?" to
 "is what I saw on the wall what was counted?". We also added features for accessibility for elderly/disabled voters, such as voice and text size for scrolling and interacting with the app.
 
-> Votepaddie is an independent civic tool. It is **not affiliated with INEC**, and the demo polling units (`DM-…`) are fictional.
+> Votepaddie is an independent civic tool, A PWA. It is **not affiliated with INEC**, and the demo polling units (`DM-…`) are fictional.
+
+## Best Use 
+Works on all devices and screens, best on mobile phones for ease of access and on desktops/laptops for ease of typing/data entry.  
+And Installable on Android devices (PWA).
 
 ## What it does
 
