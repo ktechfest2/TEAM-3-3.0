@@ -46,8 +46,10 @@
 .input, .textarea, .select {
   width: 100%; min-height: 50px; padding: 0 16px; border-radius: var(--r-md);
   background: var(--surface); border: 1px solid var(--border); outline: none;
+  color: var(--text); color-scheme: inherit;
   transition: border-color var(--dur-fast), background var(--dur-fast);
 }
+.select { appearance: none; -webkit-appearance: none; padding-right: 36px; text-overflow: ellipsis; }
 .textarea { padding: 14px 16px; min-height: 96px; resize: none; line-height: 1.4; }
 .input::placeholder, .textarea::placeholder { color: var(--text-3); }
 .input:focus, .textarea:focus, .select:focus { border-color: var(--text-3); background: var(--surface-2); }
@@ -204,6 +206,18 @@
 .hero-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; }
 .hero-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--galaxy); border: 1px solid var(--border-strong); display: grid; place-items: center; }
 .hero-mark i { width: 12px; height: 12px; border-radius: 50%; background: var(--burst); box-shadow: 0 0 14px rgba(247, 75, 1, 0.7); }
+
+/* Voice selector */
+.voice-select-wrapper { position: relative; width: 100%; min-width: 0; max-width: 100%; overflow: hidden; }
+.voice-select { appearance: none; -webkit-appearance: none; -moz-appearance: none; display: block; width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; min-height: 44px; padding: 0 40px 0 14px; font-family: inherit; font-size: 14px; font-weight: 500; border: 1px solid var(--border); border-radius: 12px; background-color: var(--surface); color: var(--text); color-scheme: light; outline: none; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: border-color var(--dur-fast), background var(--dur-fast); }
+[data-theme="dark"] .voice-select { color-scheme: dark; background-color: var(--surface); color: var(--text); }
+.voice-select:focus { border-color: var(--text-3); background-color: var(--surface-2); }
+.voice-select option { background-color: var(--bg-raised); color: var(--text); }
+.voice-select-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; color: var(--text-3); pointer-events: none; }
+
+/* Prevent flex children from forcing horizontal overflow */
+.setting, .stack, .card, .list { min-width: 0; }
+.card--flush { overflow: hidden; }
 
 /* ---------- Offline pill ---------- */
 .offline-pill { position: fixed; z-index: 70; left: 50%; transform: translateX(-50%); top: calc(var(--safe-t) + 8px); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; background: var(--glass); border: 1px solid var(--burst-line); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); animation: toast-in var(--dur-base) var(--ease-out) both; display: flex; gap: 8px; align-items: center; white-space: nowrap; }

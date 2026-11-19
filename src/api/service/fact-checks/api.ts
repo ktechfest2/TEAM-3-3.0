@@ -1,5 +1,6 @@
 import { dbError, getSupabase } from "@/lib/supabase/client";
 import { invokeFn } from "@/lib/supabase/functions";
+import { decodeHtml } from "@/lib/utils";
 import type { Lang } from "@/i18n";
 import type { FactCheck, FactCheckPage, FactCheckView } from "./types";
 
@@ -26,7 +27,11 @@ export async function listFactChecks(cursor: string | null, lang: Lang): Promise
   }
   const items: FactCheckView[] = rows.map((r) => {
     const x = tr.get(r.id);
-    return { ...r, shownTitle: x?.title ?? r.title, shownSummary: x?.summary ?? r.summary, translated: Boolean(x?.title) };
+    const title = decodeHtml(r.title);
+    const summary = r.summary ? decodeHtml(r.summary) : null;
+    const shownTitle = decodeHtml(x?.title ?? title);
+    const shownSummary = x?.summary ? decodeHtml(x.summary) : summary;
+    return { ...r, title, summary, shownTitle, shownSummary, translated: Boolean(x?.title) };
   });
   const last = rows[rows.length - 1];
   return { items, nextCursor: rows.length === PAGE && last?.published_at ? last.published_at : null };

@@ -1,27 +1,57 @@
 import { LANGS, type Lang } from "@/i18n";
+import { usePrefs } from "@/stores/prefs";
 
 export type SpeakResult = "ok" | "no-voice" | "unsupported";
 
 const speechTag = (lang: Lang) => LANGS.find((l) => l.code === lang)?.speech ?? "en-NG";
 
+export function getAvailableVoices(lang?: Lang): SpeechSynthesisVoice[] {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) return [];
+  const voices = window.speechSynthesis.getVoices();
+  if (!lang) return voices;
+  const tag = speechTag(lang).toLowerCase();
+  const base = tag.split("-")[0];
+  const matching = voices.filter((v) => v.lang.toLowerCase() === tag || v.lang.toLowerCase().startsWith(base));
+  return matching.length > 0 ? matching : voices;
+}
+
 /** Device TTS. Many phones have no Hausa/Yoruba/Igbo voice: report it so the UI can fall back to text. */
-export function speak(text: string, lang: Lang): SpeakResult {
+export function speak(text: string, lang: Lang, onEnd?: () => void): SpeakResult {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return "unsupported";
+  const { voiceRate, voiceURI } = usePrefs.getState();
   const tag = speechTag(lang);
   const base = tag.split("-")[0];
   const voices = window.speechSynthesis.getVoices();
-  const voice = voices.find((v) => v.lang.toLowerCase() === tag.toLowerCase()) ?? voices.find((v) => v.lang.toLowerCase().startsWith(base));
+  const voice = (voiceURI ? voices.find((v) => v.voiceURI === voiceURI) : null)
+    ?? voices.find((v) => v.lang.toLowerCase() === tag.toLowerCase())
+    ?? voices.find((v) => v.lang.toLowerCase().startsWith(base));
+
   // Pidgin is read with an English voice; other languages need a matching voice.
   if (!voice && lang !== "en" && lang !== "pcm") return "no-voice";
+
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = voice?.lang ?? tag;
   if (voice) u.voice = voice;
-  u.rate = 0.95;
+  u.rate = voiceRate || 1.0;
+
+  if (onEnd) {
+    u.onend = () => onEnd();
+    u.onerror = () => onEnd();
+  }
+
   window.speechSynthesis.speak(u);
   return "ok";
 }
-export const stopSpeaking = () => { if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel(); };
+
+export const stopSpeaking = () => {
+  if (typeof window !== "undefined" && "speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+};
+
+export const isCurrentlySpeaking = () =>
+  typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.speaking;
 
 export interface Recorder { stop: () => Promise<Blob> }
 

@@ -5,6 +5,7 @@ import { useAuth, useSignOut } from "@/api/service/auth/queries";
 import { useUpdateProfile } from "@/api/service/profile/queries";
 import { DeleteAccountSheet } from "@/components/me/DeleteAccountSheet";
 import { NotificationsRow } from "@/components/me/NotificationsRow";
+import { VoiceSettingsCard } from "@/components/me/VoiceSettingsCard";
 import { Banner } from "@/components/ui/Banner";
 import { Button } from "@/components/ui/Button";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -50,6 +51,8 @@ export default function MePage() {
         <div className="row-wrap">{LANGS.map((l) => <button key={l.code} className="chip" aria-pressed={lang === l.code} onClick={() => pickLang(l.code)}>{l.label}</button>)}</div>
         {lang !== "en" && <p className="caption">{t("me.langNote")}</p>}
       </section>
+
+      <VoiceSettingsCard />
 
       <section className="card card--flush">
         <div className="list">

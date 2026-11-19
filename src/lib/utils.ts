@@ -41,3 +41,25 @@ export const errMessage = (e: unknown, fallback = "Something went wrong"): strin
 
 /** Sets the --i custom property used by the CSS stagger animation. */
 export const stagger = (i: number): CSSProperties => ({ "--i": i }) as CSSProperties;
+
+/** Decodes HTML entities and cleans RSS excerpt markers like [&#8230;]. */
+export function decodeHtml(s: string | null | undefined): string {
+  if (!s) return "";
+  return s
+    .replace(/\[&#8230;\]|\[&hellip;\]|\[\.\.\.\]/gi, "…")
+    .replace(/&#8230;|&hellip;/gi, "…")
+    .replace(/&#8217;|&rsquo;/gi, "’")
+    .replace(/&#8216;|&lsquo;/gi, "‘")
+    .replace(/&#8220;|&ldquo;/gi, "“")
+    .replace(/&#8221;|&rdquo;/gi, "”")
+    .replace(/&#8211;|&ndash;/gi, "–")
+    .replace(/&#8212;|&mdash;/gi, "—")
+    .replace(/&#0?39;|&apos;/gi, "'")
+    .replace(/&quot;/gi, '"')
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}

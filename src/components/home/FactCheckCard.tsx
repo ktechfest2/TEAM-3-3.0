@@ -5,7 +5,7 @@ import { useRequestTranslation } from "@/api/service/fact-checks/queries";
 import { useAuth } from "@/api/service/auth/queries";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/icons";
-import { useSpeak } from "@/hooks/useVoice";
+import { useVoicePlayer } from "@/hooks/useVoice";
 import { useT } from "@/hooks/useT";
 import { safeUrl, timeAgo, stagger } from "@/lib/utils";
 import { toast } from "@/stores/toast";
@@ -14,10 +14,12 @@ export function FactCheckCard({ item, index }: { item: FactCheckView; index: num
   const { t, lang } = useT();
   const router = useRouter();
   const { isSignedIn } = useAuth();
-  const speak = useSpeak();
+  const { isSpeaking, toggleSpeak } = useVoicePlayer();
   const translate = useRequestTranslation();
   const link = safeUrl(item.url);
   const needsTranslation = lang !== "en" && !item.translated;
+  const speechText = `${item.shownTitle}. ${item.shownSummary ?? ""}`.trim();
+  const speaking = isSpeaking(speechText);
 
   const doTranslate = () => {
     if (!isSignedIn) return router.push("/sign-in");
@@ -35,7 +37,14 @@ export function FactCheckCard({ item, index }: { item: FactCheckView; index: num
       {item.shownSummary && <p className="callout">{item.shownSummary}</p>}
       {item.translated && <p className="caption">{t("home.machineTranslated")}</p>}
       <div className="row-wrap">
-        <Button size="sm" icon={<Icon name="speaker" size={18} />} onClick={() => speak(`${item.shownTitle}. ${item.shownSummary ?? ""}`)}>{t("home.listen")}</Button>
+        <Button
+          size="sm"
+          variant={speaking ? "primary" : "secondary"}
+          icon={<Icon name="speaker" size={18} />}
+          onClick={() => toggleSpeak(speechText)}
+        >
+          {speaking ? t("voice.stop") : t("home.listen")}
+        </Button>
         {needsTranslation && <Button size="sm" loading={translate.isPending} onClick={doTranslate}>{translate.isPending ? t("home.translating") : t("home.translate")}</Button>}
         {link && <a className="btn btn-sm btn-ghost" href={link} target="_blank" rel="noopener noreferrer">{t("home.readMore")}<Icon name="external" size={16} /></a>}
       </div>

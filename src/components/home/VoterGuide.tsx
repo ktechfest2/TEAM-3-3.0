@@ -47,6 +47,24 @@ export function VoterGuide() {
             ))}
           </ol>
           {win.data && <p className="caption">{win.data.start} – {win.data.end}{win.data.note ? ` · ${win.data.note}` : ""}</p>}
+          <a
+            href="https://inecnigeria.org/documents/guidelines/REGULATIONS-AND-GUIDELINES-FOR-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="row"
+            style={{
+              gap: 6,
+              alignItems: "center",
+              fontSize: 13,
+              fontWeight: 600,
+              color: "var(--text-2)",
+              textDecoration: "underline",
+              paddingTop: 4,
+            }}
+          >
+            <span>{t("guide.moreDetails")}</span>
+            <Icon name="external" size={14} />
+          </a>
         </div>
       )}
     </section>

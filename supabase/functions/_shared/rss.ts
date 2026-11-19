@@ -3,9 +3,12 @@
 export interface FeedItem { title: string; url: string; summary: string | null; publishedAt: string | null; tags: string[] }
 
 const decode = (s: string) =>
-  s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
+  s.replace(/\[&#8230;\]|\[&hellip;\]|\[\.\.\.\]/gi, "…")
+   .replace(/&#8230;|&hellip;/gi, "…")
+   .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
    .replace(/&#0?39;|&apos;/g, "'").replace(/&#8217;/g, "\u2019").replace(/&#8216;/g, "\u2018")
-   .replace(/&#8220;|&#8221;/g, '"').replace(/&nbsp;/g, " ");
+   .replace(/&#8220;|&#8221;/g, '"').replace(/&#8211;|&ndash;/g, "–").replace(/&#8212;|&mdash;/g, "—")
+   .replace(/&nbsp;/g, " ");
 
 const stripCdata = (s: string) => s.replace(/^\s*<!\[CDATA\[/, "").replace(/\]\]>\s*$/, "");
 const stripHtml = (s: string) => s.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
