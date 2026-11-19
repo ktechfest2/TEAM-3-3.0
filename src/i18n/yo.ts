@@ -24,6 +24,7 @@ export const yo: Partial<Record<MessageKey, string>> = {
   "unit.title": "Ibùdó ìdìbò rẹ", "unit.search": "Wá ibùdó, wọ́ọ̀dù tàbí LGA", "unit.moved": "Àwọn ibùdó ìdìbò lè yí padà. Jẹ́rìísí tìrẹ kí ọjọ́ ìdìbò tó dé lórí",
   "unit.waiting": "Ń dúró", "unit.accredited": "A ti ṣe ìfọwọ́sí", "unit.voted": "Ti dìbò", "unit.join": "Darapọ̀ mọ́ ìlà", "unit.leave": "Kúrò nínú ìlà",
   "unit.iAccredited": "A ti ṣe ìfọwọ́sí mi", "unit.iVoted": "Mo ti dìbò",
+  "unit.youVoted": "O ti dìbò", "unit.votedBody": "A ti ka ìbò rẹ. Ẹ ṣeun fún dídìbò! Láti dáàbò bo iye àwọn ènìyàn, o kò lè tún darapọ̀ mọ́ ìlà mọ́.", "unit.alreadyVoted": "O ti dìbò tẹ́lẹ̀, o kò lè tún darapọ̀ mọ́ ìlà mọ́.",
   "unit.unofficial": "Kì í ṣe ti ìjọba. INEC kọ́ ló ń darí ìlà yìí. Má ṣe kúrò nínú ìlà gidi àfi bí àwọn òṣìṣẹ́ bá sọ fún ọ.",
   "scan.title": "Ṣàyẹ̀wò ìwé àbájáde", "scan.capture": "Yà fọ́tò ìwé náà",
   "scan.limits": "Àmì fọ́tò jẹ́rìí pé fọ́tò yìí wà ní àkókò yìí. Kò jẹ́rìí pé ìwé náà jẹ́ òótọ́.",

@@ -29,6 +29,10 @@ export function QueuePanel({ unit }: { unit: PollingUnit }) {
   const [burst, setBurst] = useState(0);
 
   const doJoin = async (manual = false) => {
+    if (e?.status === "voted") {
+      toast.info(t("unit.alreadyVoted"));
+      return;
+    }
     let fix: GeoFix | null = null;
     const noCoords = unit.lat == null || unit.lng == null;
     if (!manual && !noCoords) {
@@ -40,7 +44,8 @@ export function QueuePanel({ unit }: { unit: PollingUnit }) {
       {
         onSuccess: () => { setNeedManual(null); setBurst((n) => n + 1); },
         onError: (e) => {
-          if (/too far/i.test(e.message)) setNeedManual(t("unit.tooFar"));
+          if (/already voted/i.test(e.message)) toast.error(t("unit.alreadyVoted"));
+          else if (/too far/i.test(e.message)) setNeedManual(t("unit.tooFar"));
           else if (/manually/i.test(e.message)) setNeedManual(t("unit.manualHint"));
           else toast.error(errMessage(e, t("common.error")));
         },
@@ -71,6 +76,29 @@ export function QueuePanel({ unit }: { unit: PollingUnit }) {
         <Link href="/sign-in" className="btn btn-primary btn-block">{t("common.signInToContinue")}</Link>
       ) : entry.isLoading ? (
         <div className="skeleton" style={{ height: 50, borderRadius: 16 }} />
+      ) : e?.status === "voted" ? (
+        <div className="card card--accent stack stack-4 center">
+          <div style={{ display: "grid", placeItems: "center", minHeight: 80 }}>
+            <div
+              style={{
+                width: 60,
+                height: 60,
+                borderRadius: "50%",
+                background: "rgba(34, 197, 94, 0.15)",
+                color: "#22c55e",
+                display: "grid",
+                placeItems: "center",
+              }}
+            >
+              <Icon name="check" size={30} />
+            </div>
+          </div>
+          <div className="stack stack-1">
+            <div className="headline" style={{ fontSize: 18 }}>{t("unit.youVoted")}</div>
+            <div className="caption">{t("unit.ticket")} #{e.ticket}</div>
+            <p className="callout" style={{ margin: "6px 0 0" }}>{t("unit.votedBody")}</p>
+          </div>
+        </div>
       ) : !e ? (
         <>
           <Button variant="primary" block loading={join.isPending} onClick={() => void doJoin(false)} icon={<Icon name="pin" size={20} />}>
@@ -96,7 +124,7 @@ export function QueuePanel({ unit }: { unit: PollingUnit }) {
           </div>
           <div className="stack stack-2">
             {e.status === "waiting" && <Button block loading={setStatus.isPending} onClick={() => setStatus.mutate({ id: e.id, status: "accredited" })}>{t("unit.iAccredited")}</Button>}
-            <Button block loading={setStatus.isPending} onClick={() => setStatus.mutate({ id: e.id, status: "voted" })}>{t("unit.iVoted")}</Button>
+            <Button block loading={setStatus.isPending} onClick={() => setStatus.mutate({ id: e.id, status: "voted" }, { onSuccess: () => toast.success(t("unit.youVoted")) })}>{t("unit.iVoted")}</Button>
             <Button variant="ghost" block loading={setStatus.isPending} onClick={() => setStatus.mutate({ id: e.id, status: "left" })}>{t("unit.leave")}</Button>
           </div>
         </div>

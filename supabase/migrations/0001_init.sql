@@ -608,7 +608,7 @@ begin
 end $$;
 
 -- =====================================================================
--- PART B - EDIT THESE TWO VALUES, then run this part
+-- PART B - EDIT THESE TWO VALUES AND SCHEDULE
 --   functions_url : https://<YOUR-PROJECT-REF>.supabase.co/functions/v1
 --   cron_secret   : any long random string (also set as the CRON_SECRET Edge secret)
 -- =====================================================================

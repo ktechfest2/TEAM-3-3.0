@@ -7,8 +7,19 @@ export async function getQueueState(puCode: string): Promise<QueueState | null> 
   return data as QueueState | null;
 }
 
-/** My most recent active entry at this unit (RLS only lets me see my own). */
+/** My most recent active or voted entry at this unit (RLS only lets me see my own). */
 export async function getMyEntry(puCode: string): Promise<QueueEntry | null> {
+  // If the user has voted anywhere, return that entry so they cannot rejoin any line
+  const { data: voted } = await getSupabase()
+    .from("queue_entries")
+    .select("*")
+    .eq("status", "voted")
+    .order("joined_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (voted) return voted as QueueEntry;
+
   const { data, error } = await getSupabase().from("queue_entries").select("*")
     .eq("pu_code", puCode).in("status", ["waiting", "accredited"]).order("joined_at", { ascending: false }).limit(1).maybeSingle();
   if (error) throw dbError(error);

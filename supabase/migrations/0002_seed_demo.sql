@@ -1,5 +1,5 @@
 -- =====================================================================
--- Votepaddie - DEMO polling-unit seed (0002_seed_demo.sql)
+-- Votepaddie - DEMO polling-unit seed
 -- Run AFTER 0001_init.sql. These are FAKE demo records (codes start with DM-),
 -- NOT INEC data. Replace with real INEC data before any real-world use.
 -- Coordinates are approximate Abuja-area points so the map/geofence demo has something to use.

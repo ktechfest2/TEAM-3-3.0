@@ -53,7 +53,8 @@ export function useSetQueueStatus() {
   return useMutation({
     mutationFn: (v: { id: string; status: "accredited" | "voted" | "left" }) => setQueueStatus(v.id, v.status),
     onSuccess: (entry: QueueEntry) => {
-      qc.setQueryData(queueKeys.mine(entry.pu_code), entry.status === "left" || entry.status === "voted" ? null : entry);
+      qc.setQueryData(queueKeys.mine(entry.pu_code), entry.status === "left" ? null : entry);
+      qc.invalidateQueries({ queryKey: ["queue", "mine"] });
       qc.invalidateQueries({ queryKey: queueKeys.state(entry.pu_code) });
       qc.invalidateQueries({ queryKey: queueKeys.position(entry.pu_code) });
     },

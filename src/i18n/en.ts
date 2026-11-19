@@ -50,6 +50,7 @@ export const en = {
   "unit.setMine": "Set as my unit", "unit.mine": "My unit", "unit.moved": "Polling units can move. Confirm yours before election day on the",
   "unit.headcount": "Live headcount", "unit.waiting": "Waiting", "unit.accredited": "Accredited", "unit.voted": "Voted",
   "unit.join": "Join line", "unit.joining": "Joining…", "unit.leave": "Leave line", "unit.iAccredited": "I've been accredited", "unit.iVoted": "I've voted",
+  "unit.youVoted": "You've voted", "unit.votedBody": "Your vote has been counted. Thank you for voting! To protect the headcount, you cannot rejoin the line.", "unit.alreadyVoted": "You have already voted and cannot rejoin the line.",
   "unit.unofficial": "Unofficial. This virtual line is not run by INEC. Do not leave the official queue unless polling officials tell you to.",
   "unit.ahead": "About {n} ahead of you", "unit.next": "You're probably next", "unit.ticket": "Ticket",
   "unit.tooFar": "You seem to be too far from this polling unit.", "unit.noCoords": "We don't have a map point for this unit.",

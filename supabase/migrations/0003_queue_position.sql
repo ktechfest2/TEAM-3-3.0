@@ -1,5 +1,5 @@
 -- =====================================================================
--- Votepaddie - 0003_queue_position.sql  (additive; run AFTER 0001 and 0002)
+-- Votepaddie - 0003_queue_position.sql
 -- RLS only lets a person read their own queue entry, so the app cannot count people ahead of
 -- them by itself. This exposes ONE number (how many 'waiting' tickets are lower than mine),
 -- never anyone else's rows. The app falls back to an estimate if this is not installed.

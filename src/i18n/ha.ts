@@ -24,6 +24,7 @@ export const ha: Partial<Record<MessageKey, string>> = {
   "unit.title": "Rumfar zaɓenka", "unit.search": "Nemo rumfa, mazaɓa ko ƙaramar hukuma", "unit.moved": "Ana iya canja rumfunan zaɓe. Ka tabbatar da naka kafin ranar zaɓe a",
   "unit.waiting": "Masu jira", "unit.accredited": "An tantance", "unit.voted": "Sun yi zaɓe", "unit.join": "Shiga layi", "unit.leave": "Bar layi",
   "unit.iAccredited": "An tantance ni", "unit.iVoted": "Na yi zaɓe",
+  "unit.youVoted": "Ka riga ka yi zaɓe", "unit.votedBody": "An ƙidaya ƙuri'arka. Mun gode da ka kaɗa ƙuri'a! Don kare ƙididdiga, ba za ka iya sake shiga layi ba.", "unit.alreadyVoted": "Ka riga ka yi zaɓe, ba za ka iya sake shiga layi ba.",
   "unit.unofficial": "Ba na hukuma ba. INEC ba ta tafiyar da wannan layin ba. Kada ka bar ainihin layi sai jami'ai sun ce maka.",
   "scan.title": "Duba takardar sakamako", "scan.capture": "Ɗauki hoton takardar",
   "scan.limits": "Alamar hoto tana tabbatar da cewa wannan hoton ya wanzu a wannan lokacin. Ba ta tabbatar da cewa takardar ta gaskiya ce ba.",

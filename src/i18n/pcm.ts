@@ -22,6 +22,7 @@ export const pcm: Partial<Record<MessageKey, string>> = {
   "unit.title": "Your polling unit", "unit.search": "Search unit, ward or LGA", "unit.moved": "Polling units fit move. Confirm yours before election day for",
   "unit.waiting": "Dey wait", "unit.accredited": "Don accredit", "unit.voted": "Don vote", "unit.join": "Join line", "unit.leave": "Leave line",
   "unit.iAccredited": "Dem don accredit me", "unit.iVoted": "I don vote",
+  "unit.youVoted": "You don vote", "unit.votedBody": "We don count your vote. Thank you as you vote! To protect the headcount, you no fit join line again.", "unit.alreadyVoted": "You don already vote, you no fit join the line again.",
   "unit.unofficial": "No be official. INEC no dey run this line. No comot from the real queue unless officials tell you.",
   "scan.title": "Scan result sheet", "scan.capture": "Snap the sheet",
   "scan.limits": "The photo fingerprint show say this exact photo dey for this time. E no prove say the sheet na correct one.",

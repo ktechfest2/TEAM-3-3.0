@@ -24,6 +24,7 @@ export const ig: Partial<Record<MessageKey, string>> = {
   "unit.title": "Ebe ntuli aka gị", "unit.search": "Chọọ ebe, ward ma ọ bụ LGA", "unit.moved": "Ebe ntuli aka nwere ike ịkwaga. Jide n'aka na nke gị tupu ụbọchị ntuli aka na",
   "unit.waiting": "Na-eche", "unit.accredited": "E kwadoro", "unit.voted": "Tụrụ aka", "unit.join": "Sonye n'ahịrị", "unit.leave": "Hapụ ahịrị",
   "unit.iAccredited": "E kwadoro m", "unit.iVoted": "Atụla m aka",
+  "unit.youVoted": "I tụnyela vootu", "unit.votedBody": "A gụọla vootu gị. Daalụ maka ịtụ vootu! Iji chekwaa ọnụ ọgụgụ ahụ, ị gaghị enwe ike ịlaghachi na ahịrị.", "unit.alreadyVoted": "I meela ntuli aka na mbụ, ị gaghị enwe ike ịlaghachi na ahịrị.",
   "unit.unofficial": "Ọ bụghị nke gọọmentị. INEC anaghị achị ahịrị a. Ahapụla ahịrị n'ezie ọ gwụla ma ndị ọrụ agwa gị.",
   "scan.title": "Nyochaa akwụkwọ nsonaazụ", "scan.capture": "See foto akwụkwọ ahụ",
   "scan.limits": "Mkpisi mkpụrụ ndụ foto na-egosi na foto a dị n'oge a. Ọ naghị egosi na akwụkwọ ahụ bụ eziokwu.",
