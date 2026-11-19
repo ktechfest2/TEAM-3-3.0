@@ -32,7 +32,17 @@ export function UnitSummary() {
         </div>
         <Icon name="chevronRight" size={20} />
       </Link>
-      <Banner icon="info" quiet>{t("home.unitMoved")}</Banner>
+      <Banner icon="info" quiet>
+        {t("home.unitMoved")}{" "}
+        <a
+          href="https://cvr.inecnigeria.org/pu"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "underline", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 3 }}
+        >
+          {t("common.inecPortal")}&nbsp;<Icon name="external" size={13} />
+        </a>.
+      </Banner>
     </div>
   );
 }

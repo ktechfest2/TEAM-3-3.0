@@ -33,7 +33,17 @@ export default function UnitPage() {
             <div className="mono">{unit.code}</div>
             {unit.code.startsWith("DM-") && <span className="badge badge--burst" style={{ alignSelf: "flex-start" }}>{t("common.demoData")}</span>}
           </div>
-          <Banner icon="info" quiet>{t("unit.moved")}</Banner>
+          <Banner icon="info" quiet>
+            {t("unit.moved")}{" "}
+            <a
+              href="https://cvr.inecnigeria.org/pu"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "underline", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 3 }}
+            >
+              {t("common.inecPortal")}&nbsp;<Icon name="external" size={13} />
+            </a>.
+          </Banner>
           <QueuePanel unit={unit} />
           <TipsPanel unit={unit} />
         </>

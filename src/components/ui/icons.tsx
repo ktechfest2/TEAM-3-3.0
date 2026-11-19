@@ -18,6 +18,8 @@ const paths: Record<string, ReactNode> = {
   x: P("M6 6l12 12M18 6 6 18"),
   chevronRight: P("M9.5 6l6 6-6 6"),
   chevronLeft: P("M14.5 6l-6 6 6 6"),
+  chevronDown: P("M6 9.5l6 6 6-6"),
+  chevronUp: P("M6 14.5l6-6 6 6"),
   send: P("M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z"),
   shield: <><path d="M12 3l7.5 2.8v5.7c0 4.6-3.1 8.3-7.5 9.5-4.4-1.2-7.5-4.9-7.5-9.5V5.8L12 3Z" /><path d="M8.8 12l2.2 2.2 4.2-4.4" /></>,
   flag: P("M5 21V4M5 4h11l-1.8 4 1.8 4H5"),

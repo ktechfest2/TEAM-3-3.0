@@ -6,6 +6,7 @@ export const en = {
   "common.close": "Close", "common.done": "Done", "common.back": "Back", "common.signIn": "Sign in", "common.signOut": "Sign out",
   "common.error": "Something went wrong. Please try again.", "common.empty": "Nothing here yet",
   "common.offline": "You're offline. We'll sync when you're back online.", "common.signInToContinue": "Sign in to continue",
+  "common.inecPortal": "official INEC portal",
   "common.optional": "Optional", "common.all": "All", "common.more": "Show more", "common.send": "Send", "common.search": "Search", "common.report": "Report", "common.reported": "Reported",
   "common.delete": "Delete", "common.guest": "Browsing as guest", "common.demoData": "Demo data - not official INEC records",
 
@@ -24,7 +25,7 @@ export const en = {
   "home.factsSignInBody": "Sign in to access verified news, fact-checks and live updates.",
   "home.listen": "Listen", "home.translate": "Translate", "home.translating": "Translating…", "home.readMore": "Read the full check",
   "home.machineTranslated": "Machine translated - may contain errors",
-  "home.unitMoved": "Polling units can move. Confirm yours on the official INEC portal before election day.",
+  "home.unitMoved": "Polling units can move. Confirm yours before election day on the",
   "home.confirmUnit": "Choose your unit", "home.yourUnit": "Your polling unit",
 
   "check.pvc": "My voter card (PVC) is collected", "check.unit": "I confirmed my polling unit with INEC",
@@ -39,7 +40,7 @@ export const en = {
 
   "unit.title": "Your polling unit", "unit.none": "You haven't chosen a polling unit yet.", "unit.choose": "Choose polling unit",
   "unit.change": "Change", "unit.search": "Search unit, ward or LGA", "unit.results": "Results", "unit.browse": "Browse wards",
-  "unit.setMine": "Set as my unit", "unit.mine": "My unit", "unit.moved": "Polling units can move. Confirm yours with INEC before election day.",
+  "unit.setMine": "Set as my unit", "unit.mine": "My unit", "unit.moved": "Polling units can move. Confirm yours before election day on the",
   "unit.headcount": "Live headcount", "unit.waiting": "Waiting", "unit.accredited": "Accredited", "unit.voted": "Voted",
   "unit.join": "Join line", "unit.joining": "Joining…", "unit.leave": "Leave line", "unit.iAccredited": "I've been accredited", "unit.iVoted": "I've voted",
   "unit.unofficial": "Unofficial. This virtual line is not run by INEC. Do not leave the official queue unless polling officials tell you to.",
