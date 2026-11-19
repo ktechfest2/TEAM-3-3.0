@@ -7,6 +7,7 @@ export const ig: Partial<Record<MessageKey, string>> = {
   "common.empty": "Enweghị ihe ebe a ugbu a", "common.offline": "Ị anọghị n'ịntanetị. A ga-eziga ya mgbe i weghachiri.",
   "auth.title": "Banye na Votepaddie", "auth.email": "Email gị", "auth.sendCode": "Zipu koodu", "auth.verify": "Nyochaa", "auth.resend": "Zipu koodu ọzọ",
   "home.hello": "Ndewo", "home.ready": "Kwado", "home.guide": "Otu ntuli aka si aga", "home.facts": "Nyocha eziokwu",
+  "home.factsSignIn": "Banye ka ị hụ nyocha eziokwu", "home.factsSignInBody": "Banye ka ị nweta ozi eziokwu na akụkọ ọhụrụ.",
   "home.listen": "Gee ntị", "home.translate": "Sụgharịa", "home.machineTranslated": "Igwe sụgharịrị ya - e nwere ike inwe njehie",
   "home.unitMoved": "Ebe ntuli aka nwere ike ịkwaga. Jide n'aka na nke gị na INEC tupu ụbọchị ntuli aka.",
   "unit.title": "Ebe ntuli aka gị", "unit.search": "Chọọ ebe, ward ma ọ bụ LGA", "unit.moved": "Ebe ntuli aka nwere ike ịkwaga. Jide n'aka na nke gị na INEC tupu ụbọchị ntuli aka.",

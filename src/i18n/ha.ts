@@ -7,6 +7,7 @@ export const ha: Partial<Record<MessageKey, string>> = {
   "common.empty": "Babu komai tukuna", "common.offline": "Ba ka kan layi. Za a aika idan ka dawo kan layi.",
   "auth.title": "Shiga Votepaddie", "auth.email": "Imel ɗinka", "auth.sendCode": "Aika lamba", "auth.verify": "Tabbatar", "auth.resend": "Sake aika lamba",
   "home.hello": "Sannu", "home.ready": "Shirya don zaɓe", "home.guide": "Yadda zaɓe ke gudana", "home.facts": "Binciken gaskiya",
+  "home.factsSignIn": "Shiga don duba binciken gaskiya", "home.factsSignInBody": "Shiga don samun ingantattun labarai da binciken gaskiya.",
   "home.listen": "Saurara", "home.translate": "Fassara", "home.machineTranslated": "Na'ura ce ta fassara - ana iya samun kuskure",
   "home.unitMoved": "Ana iya canja rumfunan zaɓe. Ka tabbatar da naka a INEC kafin ranar zaɓe.",
   "unit.title": "Rumfar zaɓenka", "unit.search": "Nemo rumfa, mazaɓa ko ƙaramar hukuma", "unit.moved": "Ana iya canja rumfunan zaɓe. Ka tabbatar da naka a INEC kafin ranar zaɓe.",

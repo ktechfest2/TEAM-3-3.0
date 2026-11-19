@@ -7,7 +7,7 @@ import { listFactChecks, requestTranslation } from "./api";
 
 export const factKeys = { list: (lang: Lang) => ["fact-checks", lang] as const };
 
-export function useFactChecks(lang: Lang) {
+export function useFactChecks(lang: Lang, enabled = true) {
   const qc = useQueryClient();
   const q = useInfiniteQuery({
     queryKey: factKeys.list(lang),
@@ -15,15 +15,17 @@ export function useFactChecks(lang: Lang) {
     initialPageParam: null as string | null,
     getNextPageParam: (last) => last.nextCursor,
     staleTime: 60_000,
+    enabled,
   });
   // New items appear live as the ingest job inserts them.
   useEffect(() => {
+    if (!enabled) return;
     const sb = getSupabase();
     const ch = sb.channel("fact-checks-live")
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "fact_checks" }, () => qc.invalidateQueries({ queryKey: ["fact-checks"] }))
       .subscribe();
     return () => { sb.removeChannel(ch); };
-  }, [qc]);
+  }, [qc, enabled]);
   return q;
 }
 

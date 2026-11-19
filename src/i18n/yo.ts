@@ -7,6 +7,7 @@ export const yo: Partial<Record<MessageKey, string>> = {
   "common.empty": "Kò sí nǹkan síbẹ̀ báyìí", "common.offline": "O kò sí lórí ayélujára. A óò fi ránṣẹ́ nígbà tí o bá padà.",
   "auth.title": "Wọlé sí Votepaddie", "auth.email": "Ímeèlì rẹ", "auth.sendCode": "Fi kóòdù ránṣẹ́", "auth.verify": "Jẹ́rìísí", "auth.resend": "Tún fi kóòdù ránṣẹ́",
   "home.hello": "Ẹ n lẹ́", "home.ready": "Múra sílẹ̀", "home.guide": "Bí ìdìbò ṣe ń ṣiṣẹ́", "home.facts": "Àyẹ̀wò òtítọ́",
+  "home.factsSignIn": "Wọlé láti wo àyẹ̀wò òtítọ́", "home.factsSignInBody": "Wọlé láti rí àwọn ìròyìn àti àyẹ̀wò òtítọ́ títun.",
   "home.listen": "Gbọ́", "home.translate": "Túmọ̀", "home.machineTranslated": "Ẹ̀rọ ló túmọ̀ rẹ̀ - àṣìṣe lè wà",
   "home.unitMoved": "Àwọn ibùdó ìdìbò lè yí padà. Jẹ́rìísí tìrẹ pẹ̀lú INEC kí ọjọ́ ìdìbò tó dé.",
   "unit.title": "Ibùdó ìdìbò rẹ", "unit.search": "Wá ibùdó, wọ́ọ̀dù tàbí LGA", "unit.moved": "Àwọn ibùdó ìdìbò lè yí padà. Jẹ́rìísí tìrẹ pẹ̀lú INEC kí ọjọ́ ìdìbò tó dé.",

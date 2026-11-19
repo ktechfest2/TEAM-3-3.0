@@ -5,6 +5,7 @@ export const pcm: Partial<Record<MessageKey, string>> = {
   "common.empty": "Nothing dey here yet", "common.offline": "You no get network. We go send am when network come back.",
   "auth.title": "Sign in to Votepaddie", "auth.email": "Your email", "auth.sendCode": "Send code", "auth.verify": "Confirm", "auth.resend": "Send code again",
   "home.hello": "How far", "home.ready": "Get ready for election", "home.guide": "How voting dey work", "home.facts": "Fact-checks",
+  "home.factsSignIn": "Sign in to see fact-checks", "home.factsSignInBody": "Sign in so you fit see verified news and fact-checks.",
   "home.listen": "Listen", "home.translate": "Translate", "home.machineTranslated": "Machine translate am - mistake fit dey",
   "home.unitMoved": "Polling units fit move. Confirm yours with INEC before election day.",
   "unit.title": "Your polling unit", "unit.search": "Search unit, ward or LGA", "unit.moved": "Polling units fit move. Confirm yours with INEC before election day.",

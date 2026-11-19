@@ -20,6 +20,8 @@ export const en = {
   "home.hello": "Hello", "home.daysTo": "days to the presidential election", "home.dayTo": "day to the presidential election",
   "home.countdownToday": "Election day is today", "home.ready": "Get ready", "home.guide": "How voting works",
   "home.facts": "Fact-checks", "home.factsEmpty": "No fact-checks yet. They appear here as fact-checkers publish them.",
+  "home.factsSignIn": "Sign in to view fact-checks",
+  "home.factsSignInBody": "Sign in to access verified news, fact-checks and live updates.",
   "home.listen": "Listen", "home.translate": "Translate", "home.translating": "Translating…", "home.readMore": "Read the full check",
   "home.machineTranslated": "Machine translated - may contain errors",
   "home.unitMoved": "Polling units can move. Confirm yours on the official INEC portal before election day.",
