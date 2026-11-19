@@ -82,6 +82,7 @@ export default function SignInPage() {
               {!captchaReady && ts.enabled ? t("auth.captchaWait") : t("auth.sendCode")}
             </Button>
             <Banner icon="shield" quiet>{t("auth.why")}</Banner>
+            {ts.Widget}
           </form>
         ) : (
           <div className="stack stack-4">
@@ -91,13 +92,12 @@ export default function SignInPage() {
             </div>
             <OtpInput value={code} onChange={setCode} onComplete={verifyCode} invalid={codeError} disabled={verify.isPending} />
             <Button variant="primary" block loading={verify.isPending} disabled={code.length < 6} onClick={() => void verifyCode(code)}>{t("auth.verify")}</Button>
-            <Button variant="ghost" block disabled={cooldown > 0 || !captchaReady} loading={send.isPending} onClick={() => void sendCode()}>
+            <Button variant="ghost" block disabled={cooldown > 0} loading={send.isPending} onClick={() => { setStep("email"); }}>
               {cooldown > 0 ? t("auth.resendIn", { n: cooldown }) : t("auth.resend")}
             </Button>
           </div>
         )}
 
-        {ts.Widget}
         <Button variant="ghost" block onClick={() => router.push("/")}>{t("common.guest")}</Button>
       </div>
     </main>

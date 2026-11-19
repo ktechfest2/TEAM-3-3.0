@@ -1,0 +1,18 @@
+project_id = "votepaddie"
+
+# All functions validate their own caller (user JWT, cron secret, or webhook signature),
+# so the platform JWT check is off. Deploy with: supabase functions deploy --no-verify-jwt
+[functions.send-auth-email]
+verify_jwt = false
+[functions.delete-account]
+verify_jwt = false
+[functions.ingest-factchecks]
+verify_jwt = false
+[functions.translate]
+verify_jwt = false
+[functions.transcribe]
+verify_jwt = false
+[functions.notify-queue]
+verify_jwt = false
+[functions.register-push]
+verify_jwt = false
